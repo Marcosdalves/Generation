@@ -11,13 +11,14 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity                             
+@Entity   
+@Table (name ="tb_produto") 
 public class ProdutoModel {
-	
+
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)  
-	private long id;
+	private Long id;
 	
 	@NotBlank                             
 	@Size(min=1, max=50)                  
@@ -39,11 +40,11 @@ public class ProdutoModel {
 	@JsonIgnoreProperties("produto")
 	private CategoriaModel categoria;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

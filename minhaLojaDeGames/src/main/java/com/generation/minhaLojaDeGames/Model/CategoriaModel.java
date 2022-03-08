@@ -22,7 +22,7 @@ public class CategoriaModel {
 	
 	  @Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	  private long id;
+	  private Long id;
 	  
 	  @NotNull
 	  @Size(min=4, max=100)
@@ -32,11 +32,11 @@ public class CategoriaModel {
 	  @JsonIgnoreProperties("categoria")
 	  private List <ProdutoModel> produto;  // ow ignora o categoria la do produto model, ai o outro ta falando, ow ignora o produto 
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -39,6 +39,11 @@ public class PostagemModel {
 	@JsonIgnoreProperties("tb_postagens") //só um tema dessa postagem
 	private Tema tema;
 	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private UsuarioModel usuario;
+
+
 
 	public Tema getTema() {
 		return tema;
@@ -87,7 +92,19 @@ public class PostagemModel {
 
 	public void setId(long id) {
 		this.id = id;
+		
+		
 	}
+	public UsuarioModel getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(UsuarioModel usuario) {
+		this.usuario = usuario;
+	}
+	
+	
 	}
 
 

@@ -36,6 +36,11 @@ public class UsuarioModel {
 	@NotBlank(message = "O atributo Senha é Obrigatório!")
 	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
 	private String senha;
+	
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("usuario")
+	private List<PostagemModel> postagem;
+
 
 	private String foto;
 	
@@ -86,11 +91,5 @@ public class UsuarioModel {
 	public void setPostagem(List<PostagemModel> postagem) {
 		this.postagem = postagem;
 	}
-
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("usuario")
-	private List<PostagemModel> postagem;
-	
-	
 	
 }
