@@ -37,12 +37,26 @@ public class UsuarioModel {
 	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
 	private String senha;
 	
+	private String foto;
+	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<PostagemModel> postagem;
+	
+	//Construtor para teste
+	public UsuarioModel (Long id, String nome, String usuario, String senha, String foto) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+	
+	}
+	
+	//Construtor vazio
+	public UsuarioModel() {}
 
 
-	private String foto;
 	
 	public Long getId() {
 		return id;

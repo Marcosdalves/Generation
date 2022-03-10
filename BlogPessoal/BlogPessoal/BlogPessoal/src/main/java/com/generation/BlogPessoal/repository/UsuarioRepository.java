@@ -10,7 +10,7 @@ import com.generation.BlogPessoal.model.UsuarioModel;
 public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long> {
 
 	public Optional<UsuarioModel> findByUsuario(String usuario);
-
+	
 	
 	public List<UsuarioModel> findAllByNomeContainingIgnoreCase(String nome);
 
